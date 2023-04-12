@@ -10,14 +10,14 @@ xml_path = 'path/to/your/xml/file.xml'
 def word_in_term(word, term_elem):
     return word in term_elem.text
 
-# Read the CSV file and create a list of its words
+# Read the CSV file and create a list of its words (language insensitive, this could be refactored in the future to have a specific csv per language)
 csv_words = []
 with open(csv_path, 'r') as csvfile:
     csvreader = csv.reader(csvfile)
     for row in csvreader:
         csv_words.append(row[0])
 
-# Parse the XML file and create a list of its <term> tags
+# Parse the XML file and create a list of its <term> tags (language insensitive, actually it would be better, to check a term in a language per language of the csv)
 xml_terms = []
 tree = ET.parse(xml_path)
 root = tree.getroot()
