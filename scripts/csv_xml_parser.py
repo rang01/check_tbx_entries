@@ -24,14 +24,20 @@ root = tree.getroot()
 for term_elem in root.findall('.//term'):
     xml_terms.append(term_elem)
 
-# Check if each word in the CSV file is found in any of the <term> tags in the XML file
+
+# Check if each word in the CSV file is found in any of the <term> tags in the XML file and create a list
+matches = [] 
 for word in csv_words:
     found = False
+   
     for term_elem in xml_terms:
         if word_in_term(word, term_elem):
             found = True
+            matches.append(word)
             break
     if found:
         print(f'The word "{word}" was found in the XML file.')
     else:
         print(f'The word "{word}" was not found in the XML file.')
+        
+print(matches)
