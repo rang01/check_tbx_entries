@@ -11,3 +11,6 @@ Together with a list of homographs that are common in certain domains and langua
 How could this be improved?
 - integrate SpaCy and lemmatize terms in the TBX and the csv file and check if the lemmatized terms are matching each other
 - check for compound terms (substrings) = a homograph might be a substring of a term in the tbx
+- the csv file containing homographs could be per language and thus reducing the amount of entries in the csv that are checked agains the xml
+- the terms in the xml carry a language tag and could also be read depending on their language
+- the result could contain the information per language
